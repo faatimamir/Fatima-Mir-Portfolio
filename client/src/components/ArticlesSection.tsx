@@ -5,6 +5,7 @@ import { FileText, ExternalLink, Github, Clock } from 'lucide-react';
 
 interface Article {
   title: string;
+  link?: string; 
   url: string;
   publishDate: string;
   readTime: string;

@@ -4,6 +4,7 @@ import { Rocket, Brain, FileText, Mic, Image as ImageIcon, Eye } from 'lucide-re
 
 interface Project {
   title: string;
+  link?: string; 
   company: string;
   description: string;
   achievements: string[];
@@ -14,7 +15,9 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'AI Attorney – Pakistan Legal Chatbot',
+    title: 'AI Attorney – Pakistan Legal Chatbot,ai_attorney',
+    link: 'https://www.aiattorney.com.pk/',
+
     company: 'FireFly Tech. Solutions',
     description: 'Built a comprehensive legal chatbot using advanced RAG techniques',
     achievements: [
@@ -29,6 +32,7 @@ const projects: Project[] = [
     icon: Brain,
     featured: true,
   },
+
   {
     title: 'CMontheGo – AI Marketing Assistant',
     company: 'FireFly Tech. Solutions',
@@ -40,6 +44,22 @@ const projects: Project[] = [
     ],
     technologies: ['Multi-Agent Systems', 'LLM', 'Web Scraping', 'SEO'],
     icon: Rocket,
+  },
+
+    {
+    title: 'Sigma - personal assistant',
+    link: 'https://sigma-v1-mvp-complete.vercel.app/',
+    company: 'SolnetInfo Technologies',
+    description: 'Built an AI personal assistant with automatic task detection, memory storage, and context-aware responses.',
+    achievements: [
+      'Designed a Sigma-style assistant that classifies every user message as a task, memory, or normal query',
+      'Automatically updates task lists and memory logs based on natural user input — no explicit commands required',
+      'Implements multi-agent routing for message classification, task handling, memory recall, and conversation flow',
+      'Supports long-term contextual memory, enabling the assistant to remember and reference past information',
+    ],
+    technologies: ['Nodejs', 'OpenAI', 'Langchang','versel'],
+    icon: Brain,
+    featured: true,
   },
   {
     title: 'Chat with PDF – Document Q&A System',
@@ -121,9 +141,25 @@ export default function ProjectsSection() {
                 <div className="flex-1 space-y-6">
                   <div>
                     <Badge className="mb-3">Featured Project</Badge>
-                    <h3 className="text-3xl font-semibold mb-2" data-testid="text-featured-title">
+                    {/* <h3 className="text-3xl font-semibold mb-2" data-testid="text-featured-title">
                       {featuredProject.title}
-                    </h3>
+                    </h3> */}
+
+                    <h3 className="text-3xl font-semibold mb-2" data-testid="text-featured-title">
+                        {featuredProject.link ? (
+                          <a
+                            href={featuredProject.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                          >
+                            {featuredProject.title}
+                          </a>
+                        ) : (
+                          featuredProject.title
+                        )}
+                      </h3>
+
                     <p className="text-muted-foreground">{featuredProject.company}</p>
                   </div>
 
