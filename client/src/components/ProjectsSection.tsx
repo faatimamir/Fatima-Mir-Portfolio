@@ -1,6 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Rocket, Brain, FileText, Mic, Image as ImageIcon, Eye } from 'lucide-react';
+import { Rocket, Brain, FileText, Mic, Image as ImageIcon, Eye, Robot } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -58,8 +58,8 @@ const projects: Project[] = [
       'Supports long-term contextual memory, enabling the assistant to remember and reference past information',
     ],
     technologies: ['Nodejs', 'OpenAI', 'Langchang','versel'],
-    icon: Brain,
-    featured: true,
+    icon: Robot,
+  
   },
   {
     title: 'Chat with PDF – Document Q&A System',
