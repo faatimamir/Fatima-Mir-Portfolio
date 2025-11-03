@@ -4,6 +4,8 @@
 
 This is a personal portfolio website for Fatima Mir, an AI Engineer specializing in deep learning, computer vision, NLP, and RAG systems. The portfolio showcases professional experience, AI/ML projects, technical articles, skills, education, and contact information. Built as a single-page application with a modern, clean design inspired by developer portfolios like Linear and Vercel.
 
+**Architecture**: Frontend-only static site optimized for Vercel deployment
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -16,6 +18,7 @@ Preferred communication style: Simple, everyday language.
 - React 18 with TypeScript for type-safe component development
 - Vite as the build tool and development server for fast hot module replacement
 - Wouter for lightweight client-side routing (single-page app with home and 404 pages)
+- No backend server - completely static frontend application
 
 **UI Component System**
 - Shadcn UI component library (New York style variant) with Radix UI primitives
@@ -24,9 +27,10 @@ Preferred communication style: Simple, everyday language.
 - Design system defined in `design_guidelines.md` with typography hierarchy, spacing primitives, and layout patterns
 
 **State Management**
-- TanStack Query (React Query) for server state and data fetching
+- TanStack Query (React Query) included for potential future data fetching needs
 - Local component state with React hooks for UI interactions
 - Toast notifications for user feedback via custom toast hook
+- All content is static and defined directly in components
 
 **Styling Approach**
 - Custom CSS variables for theming (light/dark mode support)
@@ -34,42 +38,9 @@ Preferred communication style: Simple, everyday language.
 - Responsive design with mobile-first approach
 - Custom hover and active states via utility classes (`hover-elevate`, `active-elevate-2`)
 
-### Backend Architecture
-
-**Server Framework**
-- Express.js server with TypeScript
-- HTTP server creation with built-in routing structure
-- Development and production build modes via esbuild
-
-**API Design**
-- RESTful API pattern with `/api` prefix for all application routes
-- Structured route registration system in `server/routes.ts`
-- Request/response logging middleware for API endpoints
-- JSON body parsing with raw body capture for webhook support
-
-**Development Experience**
-- Vite middleware integration for HMR in development
-- Custom logging with timestamps and request duration tracking
-- Replit-specific plugins for development (cartographer, dev banner, runtime error overlay)
-
-**Storage Layer**
-- In-memory storage implementation (`MemStorage`) as the default storage interface
-- Abstracted storage interface (`IStorage`) for easy swapping to database implementations
-- User management methods (CRUD operations) defined in storage interface
-- Designed to be database-agnostic with interface-based architecture
-
-### Data Schema & Validation
-
-**Database Schema**
-- Drizzle ORM for type-safe database operations
-- PostgreSQL dialect configuration (ready for Neon Database integration)
-- User table schema with UUID primary keys and unique username constraints
-- Schema-first approach with Zod validation for type safety
-
 **Type Safety**
-- Drizzle Zod integration for automatic schema-to-validator generation
-- Shared types between frontend and backend via `shared/schema.ts`
 - TypeScript strict mode enabled across the codebase
+- Type-safe component props and state management
 
 ## External Dependencies
 
@@ -84,10 +55,6 @@ Preferred communication style: Simple, everyday language.
 - **React Hook Form**: Form state management with validation
 - **Zod**: Runtime type validation and schema definition
 
-### Database & ORM
-- **Drizzle ORM**: Type-safe ORM for database operations
-- **Neon Database Serverless**: PostgreSQL database driver for serverless environments
-- **Drizzle Kit**: Database migration and schema management tooling
 
 ### Styling & UI Utilities
 - **Tailwind CSS**: Utility-first CSS framework
@@ -96,7 +63,6 @@ Preferred communication style: Simple, everyday language.
 
 ### Build & Development Tools
 - **Vite**: Frontend build tool and dev server
-- **esbuild**: JavaScript bundler for production builds
 - **TypeScript**: Static type checking
 - **PostCSS & Autoprefixer**: CSS processing
 
@@ -110,10 +76,16 @@ Preferred communication style: Simple, everyday language.
 - **@replit/vite-plugin-cartographer**: Development tooling
 - **@replit/vite-plugin-dev-banner**: Development environment banner
 
-### Session Management
-- **connect-pg-simple**: PostgreSQL session store for Express (configured but not actively used with current in-memory storage)
 
 ### Utilities
 - **date-fns**: Date formatting and manipulation
-- **nanoid**: Unique ID generation
 - **cmdk**: Command menu component
+
+## Recent Changes
+
+**November 3, 2025**: Converted from full-stack application to frontend-only static site
+- Removed Express.js backend server and all backend dependencies
+- Removed database layer (Drizzle ORM, PostgreSQL)
+- Updated build configuration for static site deployment
+- Optimized for Vercel deployment with simplified architecture
+- Maintained all frontend features and design system
