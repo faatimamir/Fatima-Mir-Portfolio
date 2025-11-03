@@ -1,6 +1,6 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Rocket, Brain, FileText, Mic, Image as ImageIcon, Eye, Robot } from 'lucide-react';
+import { Rocket, Brain, FileText, Mic, Image as ImageIcon, Eye, Bot } from 'lucide-react';
 
 interface Project {
   title: string;
