@@ -15,7 +15,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'AI Attorney – Pakistan Legal Chatbot,ai_attorney',
+    title: 'AI Attorney – Pakistan Legal Chatbot',
     link: 'https://www.aiattorney.com.pk/',
 
     company: 'FireFly Tech. Solutions',
@@ -46,7 +46,7 @@ const projects: Project[] = [
     icon: Rocket,
   },
 
-    {
+  {
     title: 'Sigma - personal assistant',
     link: 'https://sigma-v1-mvp-complete.vercel.app/',
     company: 'SolnetInfo Technologies',
