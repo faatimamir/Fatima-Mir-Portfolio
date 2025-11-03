@@ -58,7 +58,7 @@ const projects: Project[] = [
       'Supports long-term contextual memory, enabling the assistant to remember and reference past information',
     ],
     technologies: ['Nodejs', 'OpenAI', 'Langchang','versel'],
-    icon: Robot,
+    icon: Bot,
   
   },
   {
