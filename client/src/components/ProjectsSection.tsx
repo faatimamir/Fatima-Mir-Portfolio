@@ -204,9 +204,25 @@ export default function ProjectsSection() {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-semibold mb-1" data-testid={`text-project-title-${index}`}>
-                        {project.title}
+                       <h3 className="text-xl font-semibold mb-1">
+                        {project.link ? (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:underline"
+                          >
+                            {project.title}
+                          </a>
+                        ) : (
+                          project.title
+                        )}
                       </h3>
+
+                      
+                      {/* <h3 className="text-xl font-semibold mb-1" data-testid={`text-project-title-${index}`}>
+                        {project.title}
+                      </h3> */}
                       <p className="text-sm text-muted-foreground">{project.company}</p>
                     </div>
                   </div>
